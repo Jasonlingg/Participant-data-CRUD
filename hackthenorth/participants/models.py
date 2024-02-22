@@ -4,7 +4,7 @@ class Participant(models.Model):
     name = models.CharField(max_length=255)
     company = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-    phone = models.CharField(max_length=20)
+    phone = models.CharField(max_length=30)
 
     def __str__(self):
         return self.name
