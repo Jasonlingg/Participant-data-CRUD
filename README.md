@@ -6,7 +6,7 @@ This Django application is designed for managing participants and their associat
 
 # Database:
 
-In a typical scenario like a hackathon, a single participant can have multiple skills (e.g., Python, Django, JavaScript). Also, a single skill can be associated with multiple participants, each with a unique skill rating. Thus, I designed the data model to be many-to-many, where separate tables for participants and skills are created, with an additional junction table called participant skills which additionally stores the rating.
+In a typical scenario like a hackathon, a single participant can have multiple skills (e.g., Python, Django, JavaScript). Also, a single skill can be associated with multiple participants, each with a unique skill rating. Thus, I designed the data model to be many-to-many, where separate tables for participants and skills are created, with an additional junction table called participant skills which additionally stores the rating. Using a ORM, I was able to query specific data in the last endpoint to get the skills frequency.
 
 # Installation:
 
