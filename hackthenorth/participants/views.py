@@ -25,7 +25,8 @@ def skills_view(request):
     # get min_frequency and max_frequency from query parameters
     min_frequency = request.GET.get('min_frequency')
     max_frequency = request.GET.get('max_frequency')
-    
+    print("min frequency: " + min_frequency)
+    print("max frequency: " + max_frequency)
     # Convert query parameters to integers if not None
     min_frequency = int(min_frequency) if min_frequency is not None else None
     max_frequency = int(max_frequency) if max_frequency is not None else None

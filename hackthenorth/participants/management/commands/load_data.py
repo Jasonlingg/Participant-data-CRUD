@@ -3,11 +3,11 @@ from django.core.management.base import BaseCommand
 from participants.models import Participant, Skill, ParticipantSkill
 from django.db import transaction
 
+# BaseCommand to load the data into the database
 class Command(BaseCommand):
-    help = 'Load a list of users and their skills from a JSON file into the database'
 
     def add_arguments(self, parser):
-        parser.add_argument('file_path', type=str, help='The path to the JSON file containing the user data.')
+        parser.add_argument('file_path', type=str)
 
     def handle(self, *args, **kwargs):
         file_path = kwargs['file_path']
@@ -17,15 +17,14 @@ class Command(BaseCommand):
                 
                 for user in data:
                     participant, created = Participant.objects.get_or_create(
-                        email=user['email'],  # Use email as the unique identifier
+                        # Use email as the unique identifier bc in theory it should be diff for all
+                        email=user['email'],  
                         defaults={
                             'name': user['name'],
                             'company': user['company'],
                             'phone': user['phone']
                         }
                     )
-
-                    
 
                     for skill in user['skills']:
                         skill_obj, _ = Skill.objects.get_or_create(skill=skill['skill'])
