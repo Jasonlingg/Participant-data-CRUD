@@ -1,5 +1,3 @@
-# Hack the North backend challenge
-
 # Project Summary:
 
 This Django application is designed for managing participants and their associated skills, particularly useful for hackathons or similar events. It features CRUD operations on participants, skills management, and an endpoint for listing skills with the ability to filter based on frequency.
